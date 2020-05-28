@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <mat-toolbar >
+        <mat-toolbar-row>
+          <div>
+            <a  [routerLink]="'/scheduler'"> <ion-icon name="watch-outline"> </ion-icon>Schedules </a> &nbsp; &nbsp;
+            <a  [routerLink]="'/routine'"> Routines </a> &nbsp; &nbsp;
+            <a [routerLink]="'/sync'"> Syncs </a> &nbsp; &nbsp;
+            <a [routerLink]="'/events'"> Events </a> &nbsp; &nbsp;
+            <a [routerLink]="'/tags'"> Tags </a> &nbsp; &nbsp;
+            <a [routerLink]="'/trends'">Trends</a> &nbsp; &nbsp;
+      
+          </div>
+        </mat-toolbar-row>
+        </mat-toolbar>
+    <ion-item>
+        <ion-label>Time</ion-label>
+        <ion-datetime displayFormat="h:mm A"></ion-datetime>
+      </ion-item>
+
+    <ion-list>
+        <ion-list-header>
+         Upcoming Activities
+        </ion-list-header>
+        <ion-item color="primary">
+          <ion-label>Meal Break</ion-label>
+        </ion-item>
+
+        <ion-item color="secondary">
+          <ion-label>Water Break</ion-label>
+        </ion-item>
+
+        <ion-item color="tertiary">
+          <ion-label>Bio Break</ion-label>
+        </ion-item>
+
+        <ion-item color="success">
+          <ion-label>Lunch Break</ion-label>
+        </ion-item>
+
+        <ion-item color="warning">
+          <ion-label>Take Medicine</ion-label>
+        </ion-item>
+
+        <ion-item color="danger">
+          <ion-label>Office hour Done</ion-label>
+        </ion-item>
+
+        <div>
+          
+        </div>
+        <ion-icon name="paw"></ion-icon>   <ion-icon name="paw"></ion-icon>
+        
+        
+      </ion-list>
+</ion-content>

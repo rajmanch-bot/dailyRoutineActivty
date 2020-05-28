@@ -1,7 +1,8 @@
 {
   "name": "Daily Task",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

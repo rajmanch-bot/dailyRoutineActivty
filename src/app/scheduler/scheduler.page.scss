@@ -1,0 +1,18 @@
+div {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2;}
+  
+   tr:hover {background-color: #ddd;}
+
+   ion-toolbar {
+    --ion-toolbar-background	: #075E54;
+    --ion-toolbar-color: white;
+}
+
+ion-tab-bar{
+    --ion-tab-bar-background:#075E54;
+    --ion-tab-bar-color: white;
+}

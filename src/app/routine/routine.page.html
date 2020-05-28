@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Routines</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  
+    <ion-tabs>
+        <ion-tab-bar slot="bottom"  >
+          <ion-tab-button tab="schedule"  [routerLink]="'/scheduler'">
+            <ion-icon name="calendar"></ion-icon>
+            <ion-label>Schedule</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="routine"  [routerLink]="'/routine'">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Routine</ion-label>
+          </ion-tab-button>
+       <ion-tab-button tab="sync" [routerLink]="'/sync'">
+              <ion-icon name="sync-outline"></ion-icon>
+              <ion-label>Sync</ion-label>
+            </ion-tab-button>
+            <ion-tab-button tab="tag" [routerLink]="'/tags'">
+                <ion-icon name="pricetag-outline"></ion-icon>
+                <ion-label>Tag</ion-label>
+              </ion-tab-button>
+          <ion-tab-button tab="trends" [routerLink]="'/trends'">
+            <ion-icon name="trending-up-outline"></ion-icon>
+            <ion-label>Trends</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+
+      <table style="border-collapse: collapse;
+      width: 100%;">
+      <thead style="
+      padding-bottom: 100px;
+      text-align: left;
+           color: black;background-color: #f2f2f2;
+     height:100px; width:100px; font-size:18px;">
+          <tr>
+              <th> Routine</th>
+              <th>Time</th>
+              <!--<th>Action</th>-->
+              
+          </tr>
+          </thead>
+          <tbody style=" border: 1px solid #ddd;
+          padding: 8px;">
+         
+         <tr *ngFor="let t of jsoArrayObject;">
+          <td> <ion-input id="routineId"  disabled="{{isDisabled}}" type="text" value={{t.routineName}} ></ion-input></td>
+          <td><ion-input id="routineTime" disabled="{{isDisabled}}" type="dateTime" value="{{t.startTime}}"></ion-input></td>
+        
+         
+      </tr>
+       
+            
+             
+            
+            <!--  <tr>
+                  <td> <ion-input  disabled type="text" >Office work done</ion-input></td>
+                  <td><ion-input  disabled type="dateTime" >7:00 PM</ion-input></td>
+                  <td><button>Edit</button></td>
+                 
+              </tr>
+              <tr>
+                  <td> <ion-input  disabled type="text" >Meeting time</ion-input></td>
+                  <td><ion-input  disabled type="dateTime" >5:30 PM</ion-input></td>
+                  <td><button>Edit</button></td>
+                 
+              </tr>
+              <tr>
+                  <td> <ion-input  disabled type="text" >Attend virtual meeting</ion-input></td>
+                  <td><ion-input  disabled type="dateTime" >6:30PM</ion-input></td>
+                  <td><button>Edit</button></td>
+                 
+              </tr>-->
+          
+          </tbody>
+      </table>
+
+      <ion-button  *ngIf="buttonHide" (click)='editRoutineItem()' >Edit Routine</ion-button>
+
+      <ion-button  *ngIf="buttonHide2" (click)='saveRoutineItem()'>Save Routine</ion-button>
+      
+  <!--<div class="ion-padding">
+        <ion-button expand="block" type="button" class="ion-no-margin" (click)="onButtonClick()" *ngIf="buttonHide" block>Add Routine</ion-button>
+      </div>
+
+      <div class="ion-padding">
+          <ion-button expand="block" type="button" class="ion-no-margin"  (click)="onButtonClick2()" *ngIf="buttonHide2" block>Edit Routine</ion-button>
+        </div>
+    
+
+        <form *ngIf="buttonClicked">
+            <ion-title> Add Routine</ion-title>
+            <ion-item>
+              <ion-label>Name</ion-label>
+              <ion-input type="text"  name="name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Repeat</ion-label>
+              <ion-input type="text" name="repeat"></ion-input>
+            </ion-item>
+            <div class="ion-padding">
+                <ion-button expand="block" type="button" class="ion-no-margin" (click)="onSave()"  block>Save Routine</ion-button>
+              </div>
+          </form>
+
+          <form *ngIf="buttonClicked2">
+              <ion-title> Edit Routine</ion-title>
+              <ion-item>
+                <ion-label>Name</ion-label>
+                <ion-input type="text"  name="name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Repeat</ion-label>
+                <ion-input type="text" name="repeat"></ion-input>
+              </ion-item>
+              <div class="ion-padding">
+                  <ion-button expand="block" type="button" class="ion-no-margin" (click)="onSave2()"  block>Save Routine</ion-button>
+                </div>
+            </form>-->
+    
+    
+
+</ion-content>

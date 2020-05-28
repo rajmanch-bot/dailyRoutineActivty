@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
+//import { FormsModule } from '@angular/forms'
+//import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
 
@@ -26,7 +28,11 @@ describe('AppComponent', () => {
         { provide: SplashScreen, useValue: splashScreenSpy },
         { provide: Platform, useValue: platformSpy },
       ],
-      imports: [ RouterTestingModule.withRoutes([])],
+      imports: [ RouterTestingModule
+        //ReactiveFormsModule,
+     // FormsModule 
+    ],
+      
     }).compileComponents();
   }));
 

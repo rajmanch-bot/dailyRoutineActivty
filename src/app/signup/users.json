@@ -1,0 +1,21 @@
+
+
+[
+
+    {
+      "userName": "kapil",
+      "firstName": "kapil",
+      "lastName": "Reja",
+      "startOfficeTiming": "9:00",
+      "lunchTiming": "13",
+      "snacksTimeing": "16"
+    },
+    {
+      "userName": "ajayb",
+      "firstName": "ajay",
+      "lastName": "barsagade",
+      "startOfficeTiming": "9:00",
+      "lunchTiming": "13",
+      "snacksTimeing": "16"
+    }
+  ]

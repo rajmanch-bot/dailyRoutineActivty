@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>DashBoard </ion-title> <ion-label *ngIf="data"  slot="end" >Welcome  {{data.firstName}} {{lastName}}</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    
+    
+    
+    <ion-tabs >
+        <ion-tab-bar slot="bottom" >
+          <ion-tab-button tab="schedule"  [routerLink]="'/scheduler'">
+            <ion-icon name="calendar"></ion-icon>
+            <ion-label>Schedule</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="routine"  [routerLink]="'/routine'">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Routine</ion-label>
+          </ion-tab-button>
+       <ion-tab-button tab="sync" [routerLink]="'/sync'">
+              <ion-icon name="sync-outline"></ion-icon>
+              <ion-label>Sync</ion-label>
+            </ion-tab-button>
+            <ion-tab-button tab="tag" [routerLink]="'/tags'">
+                <ion-icon name="pricetag-outline"></ion-icon>
+                <ion-label>Tag</ion-label>
+              </ion-tab-button>
+          <ion-tab-button tab="trends" [routerLink]="'/trends'">
+            <ion-icon name="trending-up-outline"></ion-icon>
+            <ion-label>Trends</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+      
+      <ion-item>
+          <ion-label> {{today | date:'EEE, MMM d, y'}}  </ion-label>
+        </ion-item>
+
+        <div>
+          &nbsp;
+        </div>
+<ion-label style="font-size:20px; font-weight:bold; padding-left:20px;"> Upcoming Activites</ion-label>
+        <table style="border-collapse: collapse;
+        width: 100%;margin-top:20px;">
+        <thead style="padding-top: 16px;
+        padding-bottom: 16px;
+        text-align: left;
+        background-color: #f2f2f2;
+        color: black; height:70px; width:70px; font-size:18px;">
+            <tr>
+                <th>Time </th>
+                <th>Routine</th>
+              
+                
+            </tr>
+            </thead>
+            <tbody style=" border: 1px solid #ddd;
+            padding: 8px;">
+           
+                <tr>
+                  
+                    <td><ion-input  disabled type="dateTime" >6:00 PM</ion-input></td>
+                    <td> <ion-input  disabled type="text" >Drink Water</ion-input></td>
+                   
+                </tr>
+                <tr>
+                    
+                    <td><ion-input  disabled type="dateTime" >7:00 PM</ion-input></td>
+                    <td> <ion-input  disabled type="text" >Office work done</ion-input></td>
+                   
+                   
+                </tr>
+                <tr>
+                   
+                    <td><ion-input  disabled type="dateTime" >5:30 PM</ion-input></td>
+                    <td> <ion-input  disabled type="text" >Meeting time</ion-input></td>
+                  
+                   
+                </tr>
+                <tr>
+                   
+                    <td><ion-input  disabled type="dateTime" >6:30PM</ion-input></td>
+                    <td> <ion-input  disabled type="text" >Attend virtual meeting</ion-input></td>
+                   
+                </tr>
+            
+            </tbody>
+        </table>
+
+        <div>&nbsp; &nbsp;&nbsp;</div>
+        <div>&nbsp; &nbsp;&nbsp;</div>
+        <div>&nbsp; &nbsp;&nbsp;</div>
+        <div>&nbsp; &nbsp;&nbsp;</div>
+        <div>&nbsp; &nbsp;&nbsp;</div>
+      <!--<div style="padding-left:400px; margin-top:200px; ">
+     <ion-icon style="background-repeat: no-repeat;
+     background-size: 10px;
+     width: 60px;
+     height: 60px;" [routerLink]="'/events'"name="add-circle-outline"></ion-icon>
+    </div>
+
+  <ion-item>
+            <ion-icon style="background-repeat: no-repeat;
+            background-size: 10px;
+            width: 60px;
+            height: 60px;" [routerLink]="'/events'"name="add-circle-outline"></ion-icon>
+    </ion-item>-->
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed" style="margin-bottom:90px;">
+            <ion-fab-button  [routerLink]="'/events'" color="danger">
+              <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+   
+
+
+</ion-content>

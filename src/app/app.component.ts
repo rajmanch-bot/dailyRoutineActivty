@@ -4,6 +4,15 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { CommonModule } from '@angular/common';
+import localeIt from '@angular/common/locales/it';
+import localeEnGb from '@angular/common/locales/en-GB';
+import { registerLocaleData } from '@angular/common';
+import { LocalNotifications} from '@ionic-native/local-notifications/ngx';
+
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,45 +22,63 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'DashBoard',
+      url: '/dashboard',
+      icon: 'alarm'
+
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Scheduler',
+      url: '/scheduler',
+      icon: 'watch'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Routine',
+      url: '/routine',
+      icon: 'hourglass'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Sync',
+      url: '/sync',
+      icon: 'sync'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'Events',
+      url: '/events',
+      icon: 'medkit'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Tags',
+      url: '/tags',
+      icon: 'pricetags'
+    },
+    {
+      title: 'Trends',
+      url: '/trends',
+      icon: 'trending-up'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
+  public tags = [{title: 'laudnry',
+  value: 'Do the laundry'},{title: 'water',
+  value: 'Have water'},{title: 'break',
+  value: 'Breal for lunch'}];
+  // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private localNotifications: LocalNotifications
   ) {
+    
+
     this.initializeApp();
+    
+   
   }
+
+  
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -61,9 +88,46 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("app component ts global")
+    registerLocaleData(localeIt, 'it-IT');
+    registerLocaleData(localeEnGb, 'en-GB');
+
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+
+   // while(true){
+var year = new Date().getFullYear();
+var month = new Date().getMonth();
+var day = new Date().getDate();
+
+ 
+
+var time1 = new Date(year, month, day, 18, 13, 0, 0);
+var time2 = new Date(year, month, day, 18, 15, 0, 0);
+
+console.log(time1);
+this.localNotifications.schedule({
+    id: 1,
+    title: 'My first notification',
+    text: 'First notification test one',
+    trigger: {firstAt: new Date(time1)}
+   
+   
+  });
+
+  this.localNotifications.schedule(
+    {
+      id: 2,
+      title: 'My second notification',
+      text: 'secpmd notification test one',
+      trigger: {firstAt: new Date(time2)}
+     
+    });
+    
+    
+  
+  
   }
 }

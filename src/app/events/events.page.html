@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar  >
+    <ion-title>Add Routine/Reminders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   
+<ion-title><h1></h1></ion-title>
+    <form (ngSubmit)="saveRoutine()">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+              <ion-label>Name</ion-label>
+            <ion-input required type="text" name="routineName" [(ngModel)]="routineData.routineName" name="routineName"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+              <ion-label>Start Date</ion-label>
+              <ion-datetime value="2020-05-26" placeholder="Select Date" [(ngModel)]="routineData.startDate" name="startDate"></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label>Start Time</ion-label>
+              <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2020-05-26T07:43Z" [(ngModel)]="routineData.startTime" name="startTime"></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label>Ends</ion-label>
+              <ion-datetime value="2020-05-26" placeholder="Select Date" [(ngModel)]="routineData.endDate" name="endDate"></ion-datetime>
+            </ion-item>
+            
+            <ion-item>
+                <ion-label>Repeat</ion-label>
+                <ion-select interface="popover" [(ngModel)]="routineData.repeat" name="repeat">
+                  <ion-select-option value="daily">Daily</ion-select-option>
+                  <ion-select-option value="monthly">Monthly</ion-select-option>
+                  <ion-select-option value="yearly">Yearly</ion-select-option>
+                  <ion-select-option value="Hourly">Hourly</ion-select-option>
+                  
+                </ion-select>
+              </ion-item>
+          
+              <ion-item>
+                  <ion-label>Comments</ion-label>
+                  <ion-textarea placeholder="Enter more information here..." [(ngModel)]="routineData.comments" name="comments"></ion-textarea>
+                </ion-item>
+                <br>
+
+                <ion-item>
+           <ion-label>Add Notification </ion-label> <ion-checkbox checked="true" [(ngModel)]="routineData.addNotifiCheck" name="addNotifiCheck"> </ion-checkbox>
+          </ion-item>
+          
+          
+        </ion-list>
+    
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin" block>Save</ion-button>
+        </div>
+    
+       
+      </form>
+    
+</ion-content>

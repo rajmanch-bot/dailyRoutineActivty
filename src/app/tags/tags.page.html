@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tag List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-tabs>
+        <ion-tab-bar slot="bottom" >
+          <ion-tab-button tab="schedule"  [routerLink]="'/scheduler'">
+            <ion-icon name="calendar"></ion-icon>
+            <ion-label>Schedule</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="routine"  [routerLink]="'/routine'">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Routine</ion-label>
+          </ion-tab-button>
+       <ion-tab-button tab="sync" [routerLink]="'/sync'">
+              <ion-icon name="sync-outline"></ion-icon>
+              <ion-label>Sync</ion-label>
+            </ion-tab-button>
+            <ion-tab-button tab="tag" [routerLink]="'/tags'">
+                <ion-icon name="pricetag-outline"></ion-icon>
+                <ion-label>Tag</ion-label>
+              </ion-tab-button>
+          <ion-tab-button tab="trends" [routerLink]="'/trends'">
+            <ion-icon name="trending-up-outline"></ion-icon>
+            <ion-label>Trends</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+
+      <table style="border-collapse: collapse;
+      width: 100%;">
+          <thead style="padding-top: 16px;
+          padding-bottom: 16px;
+          text-align: left;
+          background-color: #5fc552;
+          color: black; height:70px; width:70px; font-size:18px;  
+          ">
+          <tr>
+              <th style="padding-left:50px;"> </th>
+         </tr>
+          </thead>
+          <tbody style=" border: 1px solid rgb(211, 93, 93);
+          padding: 8px;">
+         
+              <tr *ngFor="let t of tags;">
+                  <td style="padding-left:50px;"> <ion-input   type="text" >{{t}}</ion-input></td>
+                
+                 
+              </tr>
+           
+             
+          </tbody>
+      </table>
+</ion-content>
