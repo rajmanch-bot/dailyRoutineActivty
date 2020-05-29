@@ -104,15 +104,15 @@ var day = new Date().getDate();
 
  
 
-var time1 = new Date(year, month, day, 18, 13, 0, 0);
-var time2 = new Date(year, month, day, 18, 15, 0, 0);
+var time1 = new Date(year, month, day, 18, 34, 0, 0);
+var time2 = new Date(year, month, day, 18, 36, 0, 0);
 
-console.log(time1);
+//console.log(time1);
 this.localNotifications.schedule({
     id: 1,
-    title: 'My first notification',
-    text: 'First notification test one',
-    trigger: {firstAt: new Date(time1)}
+    title: 'Stand Call',
+    text: 'Standcall meeting at 11:00 AM',
+    trigger: { at: new Date(new Date().getTime() + 10000) }
    
    
   });
@@ -120,9 +120,9 @@ this.localNotifications.schedule({
   this.localNotifications.schedule(
     {
       id: 2,
-      title: 'My second notification',
-      text: 'secpmd notification test one',
-      trigger: {firstAt: new Date(time2)}
+      title: 'Lunch time',
+      text: 'Lunch time at 1:00 PM',
+      trigger: { at: new Date(new Date().getTime() + 15000) }
      
     });
     

@@ -14,6 +14,7 @@ export class TrendsPage implements OnInit {
 
   bars: any;
   colorArray: any;
+  
 
   ionViewDidEnter() {
     this.createBarChart();
@@ -26,7 +27,7 @@ export class TrendsPage implements OnInit {
         labels: ['Water', 'Lunch', 'Break', 'Meeting'],
         datasets: [{
           label: 'Activities',
-          data: [2.5, 3.8, 5, 6.9],
+          data: [3.8, 1.8, 2.5, 6.9],
           backgroundColor: 'rgb(38, 194, 129)', // array should have same number of elements as number of dataset
           borderColor: 'rgb(38, 194, 129)', // array should have same number of elements as number of dataset
           borderWidth: 1

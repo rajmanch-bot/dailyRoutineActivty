@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>DashBoard </ion-title> <ion-label *ngIf="data"  slot="end" >Welcome  {{data.firstName}} {{lastName}}</ion-label>
+    <ion-title>DashBoard </ion-title> <ion-label *ngIf="data1"  slot="end" >Welcome  {{data1.firstName}} </ion-label>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +10,12 @@
     
     
     <ion-tabs >
+      
         <ion-tab-bar slot="bottom" >
+          <ion-tab-button tab="userprofile"  [routerLink]="'/userprofile'">
+            <ion-icon name="person-circle-outline"></ion-icon>
+             <ion-label>Profile</ion-label>
+           </ion-tab-button>
           <ion-tab-button tab="schedule"  [routerLink]="'/scheduler'">
             <ion-icon name="calendar"></ion-icon>
             <ion-label>Schedule</ion-label>
@@ -49,9 +54,9 @@
         padding-bottom: 16px;
         text-align: left;
         background-color: #f2f2f2;
-        color: black; height:70px; width:70px; font-size:18px;">
+        color: black; height:90px; width:70px; font-size:18px;">
             <tr>
-                <th>Time </th>
+                <th style="padding-left:10px;">Time </th>
                 <th>Routine</th>
               
                 
@@ -59,33 +64,14 @@
             </thead>
             <tbody style=" border: 1px solid #ddd;
             padding: 8px;">
+           <tr *ngFor="let t of routineUpcomingData;">
+            <td> <ion-input id="routineId"  disabled type="text" value={{t.routineName}} ></ion-input></td>
+            <td><ion-input id="routineTime"   disabled type="text" value="{{t.startDate}}"></ion-input>
+            
+            </td>
+          
            
-                <tr>
-                  
-                    <td><ion-input  disabled type="dateTime" >6:00 PM</ion-input></td>
-                    <td> <ion-input  disabled type="text" >Drink Water</ion-input></td>
-                   
-                </tr>
-                <tr>
-                    
-                    <td><ion-input  disabled type="dateTime" >7:00 PM</ion-input></td>
-                    <td> <ion-input  disabled type="text" >Office work done</ion-input></td>
-                   
-                   
-                </tr>
-                <tr>
-                   
-                    <td><ion-input  disabled type="dateTime" >5:30 PM</ion-input></td>
-                    <td> <ion-input  disabled type="text" >Meeting time</ion-input></td>
-                  
-                   
-                </tr>
-                <tr>
-                   
-                    <td><ion-input  disabled type="dateTime" >6:30PM</ion-input></td>
-                    <td> <ion-input  disabled type="text" >Attend virtual meeting</ion-input></td>
-                   
-                </tr>
+        </tr>
             
             </tbody>
         </table>

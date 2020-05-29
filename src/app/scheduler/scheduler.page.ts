@@ -26,6 +26,7 @@ data1: any;
 currentDate;
 public lastName;
 officeTiming: any;
+routineUpcomingData: any = [];
 
 
 today: number = Date.now();
@@ -35,7 +36,7 @@ today: number = Date.now();
    // this.translateService.use('en');
 
 this.lastName =   window.localStorage.getItem('lastName');
-this.data1 = JSON.parse( window.localStorage.getItem('signupForm'));
+this.data1 = JSON.parse( window.localStorage.getItem('profileForm'));
 this.officeTiming = window.localStorage.getItem('officeTiming');
 
 console.log('scheldldldl====' + this.data1.firstName);
@@ -49,6 +50,40 @@ this.route.queryParams.subscribe(params => {
 
 
   ngOnInit() {
+    this.routineUpcomingData =[
+      {
+        "routineName": "Exercise",
+        "startDate": "06:00 AM",
+        
+      },
+      {
+        "routineName": "Start Office",
+        "startDate": "09:00 AM",
+       
+      }
+      ,
+      {
+        "routineName": "Standup Meeting",
+        "startDate": "11:00 AM",
+       
+      },
+      {
+        "routineName": "Lunch break",
+        "startDate": "13:00 PM",
+       
+      },
+      {
+        "routineName": "Take Medicine",
+        "startDate": "14:30 PM",
+       
+      },
+      
+      {
+        "routineName": "End Office",
+        "startDate": "18:30 PM",
+       
+      }
+    ];
   }
 
 }

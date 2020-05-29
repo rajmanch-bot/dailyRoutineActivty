@@ -11,8 +11,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 export class RoutinePage implements OnInit {
 
   routineReminderData: any;
-  jsoArrayObject: any = [];
+  routineUpcomingData: any = [];
   jsonArray: any = {};
+  routineNName: any;
+  startNTime: any;
 
   //userData = "[{ \"userName\": \"kapil\", \"startOfficeTiming\": \"9:00AM\", \"lunchTiming\": \"13:00PM\", \"snacksTiming\": \"16:00PM\"},{ \"userName\": \"Kiran\", \"startOfficeTiming\": \"9:00AM\", \"lunchTiming\": \"13:00PM\", \"snacksTiming\": \"16:00PM\"}]";
 
@@ -83,32 +85,53 @@ this.localNotifications.schedule({
 }
 
 ngOnInit() {
-//console.log(data.default[0]);
-  this.jsoArrayObject =[
-    {
-      "routineName": "Drink water",
-      "startDate": "9:00AM",
-      "startTime": "13:00PM",
-      "endDate": "16:00PM",
-      "repeat": "16:00PM",
-      "comments": "16:00PM",
-      "addNotifiCheck": "16:00PM"
-    },
-    {
-      "routineName": "Office time",
-      "startDate": "9:00AM",
-      "startTime": "13:00PM",
-      "endDate": "16:00PM",
-      "repeat": "16:00PM",
-      "comments": "16:00PM",
-      "addNotifiCheck": "16:00PM"
-    }
-  ];
+  
+this.jsonArray =  JSON.parse(window.localStorage.getItem('routineForm'));
 
-//this.jsonArray =  window.localStorage.getItem('routineForm');
+this.routineNName = this.jsonArray.routineName;
+this.startNTime = this.jsonArray.startTime;
+//console.log(data.default[0]);
+this.routineUpcomingData =[
+  {
+    "routineName": "Exercise",
+    "startDate": "06:00 AM",
+    
+  },
+  {
+    "routineName": "Start Office",
+    "startDate": "09:00 AM",
+   
+  }
+  ,
+  {
+    "routineName": "Standup Meeting",
+    "startDate": "11:00 AM",
+   
+  },
+  {
+    "routineName": "Lunch break",
+    "startDate": "13:00 PM",
+   
+  },
+  {
+    "routineName": "Take Medicine",
+    "startDate": "14:30 PM",
+   
+  },
+  
+  {
+    "routineName": "End Office",
+    "startDate": "18:30 PM",
+   
+  }
+];
+
+
+  
+
    //console.log('routine data===' + this.jsonArray);
-  this.jsoArrayObject.push(JSON.parse(window.localStorage.getItem('routineForm')));
-  console.log(this.jsoArrayObject);
+  //this.jsoArrayObject.push(JSON.parse(window.localStorage.getItem('routineForm')));
+  //console.log(this.jsoArrayObject);
  }
 
 

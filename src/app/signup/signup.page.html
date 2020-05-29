@@ -34,15 +34,19 @@
             </ion-item>
 
         <ion-item>
-            <ion-label position="stacked">Phone number <ion-text color="danger">*</ion-text></ion-label>
+            <ion-label position="stacked">Mobile Number <ion-text color="danger">*</ion-text></ion-label>
             <ion-input required type="text" [(ngModel)]="signup.phoneNumber" name="phoneNumber"  ></ion-input>
           </ion-item>
 
           <ion-item>
-              <ion-label position="stacked">Office Timing <ion-text color="danger">*</ion-text></ion-label>
-              <ion-input required type="text" [(ngModel)]="signup.officeTiming" name="officeTiming"></ion-input>
+              <ion-label position="stacked">Shift Start <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input required type="text" [(ngModel)]="signup.shiftStart" name="shiftStart"></ion-input>
             </ion-item>
       
+            <ion-item>
+              <ion-label position="stacked">Shift End <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input required type="text" [(ngModel)]="signup.shiftEnd" name="shiftEnd"></ion-input>
+            </ion-item>
       
     </ion-list>
 

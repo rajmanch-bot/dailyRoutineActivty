@@ -8,7 +8,16 @@ ion-tab-bar{
     --ion-tab-bar-color: white;
 }
 
-ion-button{
-    --background	: #075E54;
-}
-  
+.line {
+    align-items: center;
+    margin: 1em ;
+    border-collapse: collapse;
+      
+   
+    
+    &:before,
+    &:after {
+      height: 1px;
+      margin: 0 1em;
+    }
+} 

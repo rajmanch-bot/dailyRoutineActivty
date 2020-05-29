@@ -7,6 +7,10 @@
 <ion-content>
     <ion-tabs>
         <ion-tab-bar slot="bottom" >
+          <ion-tab-button tab="userprofile"  [routerLink]="'/userprofile'">
+            <ion-icon name="person-circle-outline"></ion-icon>
+             <ion-label>Profile</ion-label>
+           </ion-tab-button>
           <ion-tab-button tab="schedule"  [routerLink]="'/scheduler'">
             <ion-icon name="calendar"></ion-icon>
             <ion-label>Schedule</ion-label>
@@ -43,9 +47,27 @@
          <div style="padding-left:50px; margin-top:5px;">
             <ion-item> <ion-icon style="background-repeat: no-repeat;
             background-size: 10px;
-            " name="logo-skype"></ion-icon>
+            " name="mail-unread-outline"></ion-icon>
            &nbsp; &nbsp;
                 <ion-checkbox > </ion-checkbox> &nbsp; &nbsp;<ion-label>Outlook Calendar </ion-label>
                </ion-item>
            </div>    
+           <div style="padding-left:50px; margin-top:5px;">
+            <ion-item> <ion-icon style="background-repeat: no-repeat;
+            background-size: 10px;
+            " name="fitness-outline"></ion-icon>
+           &nbsp; &nbsp;
+                <ion-checkbox > </ion-checkbox> &nbsp; &nbsp;<ion-label>Fitbit </ion-label>
+               </ion-item>
+           </div> 
+
+           <div class="ion-padding" >
+            <ion-button expand="block"  type="button" class="ion-no-margin" (click)='forceSync()' >Force Sync</ion-button>
+          </div>
+
+          
+          <div class="loader" *ngIf="loaderHide"></div>
+
+          <div *ngIf="successHide" style="margin-left:25%; font-weight: bold;"> Sync Successful</div>
+      
 </ion-content>

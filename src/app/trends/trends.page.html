@@ -8,6 +8,10 @@
   
     <ion-tabs>
         <ion-tab-bar slot="bottom" >
+          <ion-tab-button tab="userprofile"  [routerLink]="'/userprofile'">
+            <ion-icon name="person-circle-outline"></ion-icon>
+             <ion-label>Profile</ion-label>
+           </ion-tab-button>
           <ion-tab-button tab="schedule"  [routerLink]="'/scheduler'">
             <ion-icon name="calendar"></ion-icon>
             <ion-label>Schedule</ion-label>
@@ -33,7 +37,7 @@
       </ion-tabs>
 
       <ion-list-header color="light">Daily Routine Chart</ion-list-header>
-      <ion-card class="welcome-card" style="width:75%; height: 75%">
+      <ion-card class="welcome-card" style="width:100%; height: 42%">
         <ion-card-header>
           <ion-card-subtitle>Number of activity per day</ion-card-subtitle>
           <ion-card-title>Routine</ion-card-title>
@@ -42,4 +46,9 @@
           <canvas #barChart></canvas>
         </ion-card-content>
       </ion-card>
+
+     
+      <img src="assets/fitbit.PNG">
+  
+
 </ion-content>

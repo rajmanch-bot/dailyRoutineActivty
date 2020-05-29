@@ -9,6 +9,10 @@
   
     <ion-tabs>
         <ion-tab-bar slot="bottom"  >
+          <ion-tab-button tab="userprofile"  [routerLink]="'/userprofile'">
+            <ion-icon name="person-circle-outline"></ion-icon>
+             <ion-label>Profile</ion-label>
+           </ion-tab-button>
           <ion-tab-button tab="schedule"  [routerLink]="'/scheduler'">
             <ion-icon name="calendar"></ion-icon>
             <ion-label>Schedule</ion-label>
@@ -41,8 +45,8 @@
            color: black;background-color: #f2f2f2;
      height:100px; width:100px; font-size:18px;">
           <tr>
-              <th> Routine</th>
-              <th>Time</th>
+              <th style="padding-left:10px;"> Routine</th>
+              <th style="padding-left:20px;">Time</th>
               <!--<th>Action</th>-->
               
           </tr>
@@ -50,12 +54,19 @@
           <tbody style=" border: 1px solid #ddd;
           padding: 8px;">
          
-         <tr *ngFor="let t of jsoArrayObject;">
+         <tr *ngFor="let t of routineUpcomingData;">
           <td> <ion-input id="routineId"  disabled="{{isDisabled}}" type="text" value={{t.routineName}} ></ion-input></td>
-          <td><ion-input id="routineTime" disabled="{{isDisabled}}" type="dateTime" value="{{t.startTime}}"></ion-input></td>
-        
-         
+          <td><ion-input id="routineTime"  disabled="{{isDisabled}}" type="text" value="{{t.startDate}}" style="margin-left: 18px;"></ion-input>
+          
+          </td>
       </tr>
+
+      <tr >
+        <td> <ion-input id="routineId"  disabled="{{isDisabled}}" type="text"  value={{routineNName}} ></ion-input></td>
+        <td><ion-datetime id="routineTime" display-format="HH:mm A" disabled="{{isDisabled}}" type="dateTime" value="{{startNTime}}" style="margin-left: 10px;"></ion-datetime>
+        
+        </td>
+    </tr>
        
             
              

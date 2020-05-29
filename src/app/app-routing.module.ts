@@ -46,6 +46,14 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'fitbit',
+    loadChildren: () => import('./fitbit/fitbit.module').then( m => m.FitbitPageModule)
+  },
+  {
+    path: 'userprofile',
+    loadChildren: () => import('./userprofile/userprofile.module').then( m => m.UserprofilePageModule)
   }
 ];
 

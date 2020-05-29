@@ -23,41 +23,12 @@ export class SignupPage {
 
 
 
-  constructor(private router: Router, public atrCtrl: AlertController ){
+  constructor(private router: Router ){
 
 
   }
 
-   async showPromptAlert() {
-    const navigationExtras: NavigationExtras =
-    {
-      state: {
-        signup: this.signup
-      }
-    };
-   // console.log(this.signup);
-
-    const alert = await  this.atrCtrl.create({
-      header: 'OTP',
-      message: '',
-      inputs: [
-        {
-          name: 'Enter OTP',
-          placeholder: '303090'
-        }
-      ],
-      buttons: [
-        {
-          text: 'ok',
-          role: 'ok',
-          handler: data => {
-          this.router.navigate(['/scheduler'], navigationExtras);
-          }
-        }
-      ]
-    });
-    await  alert.present();
-  }
+   
 
   /*saveFile() {
     const headers = new HttpHeaders();
@@ -82,19 +53,21 @@ export class SignupPage {
     password: '',
     confirmPassword: '',
     phoneNumber: '',
-    officeTiming: ''
+    shiftStart: '',
+shiftEnd: ''
   };
 
 
   signupForm(){
 
 
-  this.showPromptAlert();
+  
 
   window.localStorage.setItem('signupForm', JSON.stringify(this.signup));
   window.localStorage.setItem('firstName', this.signup.firstName);
   window.localStorage.setItem('lastName', this.signup.lastName);
-  window.localStorage.setItem('officeTiming', this.signup.officeTiming);
+  window.localStorage.setItem('officeTiming', this.signup.shiftStart);
+  this.router.navigate(['/login']);
 
   }
 
